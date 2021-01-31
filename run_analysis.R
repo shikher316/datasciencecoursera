@@ -48,4 +48,4 @@ test_train_with_activity_df<-bind_rows(test_df_FINAL,train_df_FINAL)%>%inner_joi
 
 # Output of Mean for each group 
 output_bygroup<-test_train_with_activity_df%>%group_by(Activity,ActivityName)%>%summarise_at(c(1:561),mean);
-output_bygroup;
+write.table(output_bygroup,file="outputweeek4.txt",row.name=FALSE);
